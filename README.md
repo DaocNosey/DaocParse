@@ -66,7 +66,7 @@ Search specific zones
 ![Filter Zone](https://i.imgur.com/E1BK2ZG.png)
 
 ### Custom Group Filtering
-Create custom highlight groups for guild/group/friends<br/> 
+Create custom highlight groups for guild/group/friends
 ![Filter Group](https://i.imgur.com/Fiif4mz.png)
 
 ### Custom Group + Zone Filtering
@@ -86,7 +86,7 @@ Realm points, bounty points, and money are tracked<br/>
 ![Currency Tracking](https://i.imgur.com/xebyOq5.png)
 
 ## Cookie
-Eden cookie and user-agent
+Eden Herald requires you to be logged in to pull data. Using your browsers cookie and user-agent allows you to access it.
 - Open https://eden-daoc.net/herald and make sure you are logged in
 - Press F12 to open developer tools
 - Refresh the page
