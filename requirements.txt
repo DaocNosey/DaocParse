@@ -1,0 +1,5 @@
+watchdog
+requests
+tcolorpy 
+json_repair
+pywin32
