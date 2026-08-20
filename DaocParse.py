@@ -264,7 +264,6 @@ class DaocParser():
 				return
 
 			if is_relic(kill_info):
-				# print(kill_info)
 				self.print_relic(kill_info)
 				return
 
