@@ -46,8 +46,6 @@ class DaocParser():
 	class FileHandler(FileSystemEventHandler):
 		def __init__(self, outer):
 			self.outer = outer
-			self.time1 = time.time()
-			self.time2 = 0
 
 		def on_modified(self, event):
 			"""Called when files have been modified"""
