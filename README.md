@@ -12,8 +12,9 @@ RVR kill feed with player class information and realm coloring
 - Automatically save previous log files
 
 ## Installing
-_Python version is recommended but an exe is available_ https://github.com/DaocNosey/DaocParse/releases/tag/v1.0.0<br/>
-- Download and save to any folder<br/>
+_Python version is recommended but an exe is available_ (https://github.com/DaocNosey/DaocParse/releases/tag/v1.0.0)<br/>
+- Download the zip file, and extract to any folder<br/>
+![Download](https://i.imgur.com/FvRLdaU.png)
 - Open command prompt and navigate to the folder (type `cd path/to/folder`)<br/>
 - Install libraries from requirements.txt<br/>
 `python -m pip install -r requirements.txt`<br/>
