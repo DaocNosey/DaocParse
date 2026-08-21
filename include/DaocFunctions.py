@@ -1016,37 +1016,6 @@ class InfoBox:
         printt(colored('=' * 58, fore=self.color, back=self.back), large_space=True, end_line=True)
         self.clear()
 
-def scuffed_regex(text: str, template: str) -> tuple[str, str, list]:
-    """
-    Get values from text using template with %s
-    
-    Args:
-        text:        [12:12:12] Player1 was just killed by Player2 in Zone.
-        template:    +k[%s] %s was just killed by %s in %s.
-
-    Returns:
-        Tuple containing the command type, command direction, and values pulled from %s
-        ('+', 'k', ['12:12:12', 'Player1', 'Player2', 'Zone'])
-    """
-    _text = text
-    text_list = []
-
-    first, second, template = (template[0:1], template[1:2], template[2:])
-
-    for segment in template.split('%s'):
-        if not segment in text: return
-
-        _part = _text[:_text.find(segment)]
-        _text = _text.replace(_part + segment, '')
-
-        if _part: text_list.append(_part)
-
-    return (
-        first, 
-        second, 
-        text_list
-    )
-
 def rp_to_rr(realm_points: int) -> list[str, int]:
     """Convert realm points into realm rank, and calculate rp needed for next level"""
     if isinstance(realm_points, str): realm_points = int(realm_points)
