@@ -442,7 +442,6 @@ class DaocParser():
 							self.filter_zone(zone_name=command)
 						case '#':
 							_zone = ''
-							# Used to filter by group and zone
 							if group_command := re_list(re.findall(r'#(.*?) @(.*?)\Z', full_command)):
 								command = group_command[0].strip()
 								_zone = group_command[1].strip()
@@ -459,7 +458,7 @@ class DaocParser():
 						case '*':
 							_rp = self.loot.i.get('r', 0)
 							logger.info(f'(RESET) Session RP: {_rp}')
-							delete_log_file()
+							delete_log_file(file_text=command, realm_points=_rp)
 						case '/':
 							_count = int(command) if command.isnumeric() else 1000
 							self.recent_kills(display_count=_count)
