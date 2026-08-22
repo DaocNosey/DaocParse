@@ -416,11 +416,11 @@ def current_time(file_string: bool = False):
         return datetime.datetime.now().strftime('%m-%d-%Y %H;%M;%S')
     return datetime.datetime.now().strftime('%m-%d-%Y %H:%M:%S')
 
-def delete_log_file(file_text: str = ''):
+def delete_log_file(file_text: str = '', realm_points: int = 0):
     """Deletes current chat.log file. Saves to /saved_logs folder if save_logs is enabled"""
     now = current_time(file_string=True)
 
-    file_name = f'chat {now} {file_text}'.strip()
+    file_name = f'chat {now} ({realm_points} RP) {file_text}'.strip()
     current_log = f'{log_path}/chat.log'
     saved_log_path = f'{log_path}/saved_logs'
     save_new = f'{saved_log_path}/{file_name}.log'
