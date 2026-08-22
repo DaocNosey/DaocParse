@@ -70,10 +70,6 @@ Search specific zones
 Create custom highlight groups for guild/group/friends
 ![Filter Group](https://i.imgur.com/Fiif4mz.png)
 
-### Custom Group + Zone Filtering
-Search for specific highlight group kills in a certain zone
-![Filter Group + Zone](https://i.imgur.com/Z8HvqTv.png)
-
 ### Eden Herald Stats
 Fetch player stats from Eden Herald
 ![Player Stats](https://i.imgur.com/j59zo0m.png)
