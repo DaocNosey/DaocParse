@@ -477,6 +477,10 @@ class DaocParser():
 						case '<':
 							self.thread_event.clear()
 							StyleBuilder().run_editor()
+							self.highlight_names = highlight_names
+							self.highlight = []
+							for k, v in self.highlight_names.items():
+								self.highlight.extend(v['names'])
 							self.thread_event.set()
 							self.recent_kills(display_count=300)
 
