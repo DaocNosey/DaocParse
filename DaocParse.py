@@ -341,8 +341,7 @@ class DaocParser():
 		"""Filters kills based on zone"""
 		zone_kill_list = []
 		printt('%s %s\n' 
-			% (colored('Zone:', fore='YELLOW'), zone_name),
-			new_line=True)
+			% (colored('Zone:', fore='YELLOW'), zone_name))
 
 		for rvr in self.log_data:
 			if is_same_area(zone_name, rvr.zone):
