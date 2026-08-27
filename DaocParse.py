@@ -288,7 +288,14 @@ class DaocParser():
 
 		printt('[%s] %s %s %s (%s)' 
 			% (timestamp, killer_name, arrow, victim_name, zone))
-
+		
+	def reload_groups(self):
+		self.highlight_names = highlight_names
+		self.highlight.clear()
+		
+		for k, v in self.highlight_names.items():
+			self.highlight.extend(v['names'])
+			
 	def recent_kills(self, display_count: int):
 		"""Print n most recent kills"""
 		if display_count >= 300: clear()
@@ -337,7 +344,7 @@ class DaocParser():
 			printt(bg_event)
 
 	@add_lines
-	def filter_zone(self, zone_name: str):
+	def filter_zone(self, zone_name: str, display_count: int = 300):
 		"""Filters kills based on zone"""
 		zone_kill_list = []
 		printt('%s %s\n' 
@@ -346,7 +353,9 @@ class DaocParser():
 		for rvr in self.log_data:
 			if is_same_area(zone_name, rvr.zone):
 				zone_kill_list.append(rvr)
-
+				
+		if display_count >= 300: clear()
+			
 		for x in zone_kill_list[-500:]:
 			self.print_kill(x)
 
@@ -365,6 +374,32 @@ class DaocParser():
 			if player_match(character_name, rvr.killer, rvr.victim):
 				self.print_kill(rvr)
 
+	@add_lines
+	def filter_captures(self):
+		"""Filter keep/tower captures"""
+		for rvr in self.log_data:
+			if is_keep(rvr):
+				self.print_keep(rvr)
+				continue
+
+			if is_relic(rvr):
+				self.print_relic(rvr)
+				continue
+				
+	def filter_no_ellan(self, display_count: int = 300):
+		"""Filter out all EV zones"""
+		if display_count >= 300: clear()
+
+		for rvr in self.log_data[-display_count:]:
+			zone_ellan = False
+			for zone in frontier_zones:
+				if is_same_area(rvr.zone, zone): 
+					zone_ellan = True
+					break
+
+			if not zone_ellan:
+				self.print_kill(rvr)
+	
 	def get_kill_death(self, character_name: str) -> tuple[int, int]:
 		"""
 		Calculate kill and death count
@@ -410,18 +445,6 @@ class DaocParser():
 		self.box.add_text('Currency', display_data)
 		self.box.display()
 
-	@add_lines
-	def filter_captures(self):
-		"""Filter keep/tower captures"""
-		for rvr in self.log_data:
-			if is_keep(rvr):
-				self.print_keep(rvr)
-				continue
-
-			if is_relic(rvr):
-				self.print_relic(rvr)
-				continue
-
 	def command_handler(self):
 		"""Handle all user input commands"""
 		try:
@@ -453,7 +476,8 @@ class DaocParser():
 						case '^':
 							self.display_currency()
 						case '&':
-							...
+							update_rank12()
+							self.reload_groups()
 						case '*':
 							_rp = self.loot.i.get('r', 0)
 							logger.info(f'(RESET) Session RP: {_rp}')
@@ -462,12 +486,12 @@ class DaocParser():
 							_count = int(command) if command.isnumeric() else 1000
 							self.recent_kills(display_count=_count)
 						case ',':
-							...
+							self.filter_no_ellan()
 						case '.':
 							FullStats(player_name=command).get_stats()
-						case '+':
-							save_window_position()
 						case '-':
+							save_window_position()
+						case '+':
 							save_window_position(reset=True)
 						case '?':
 							display_help()
@@ -476,10 +500,7 @@ class DaocParser():
 						case '<':
 							self.thread_event.clear()
 							StyleBuilder().run_editor()
-							self.highlight_names = highlight_names
-							self.highlight = []
-							for k, v in self.highlight_names.items():
-								self.highlight.extend(v['names'])
+							self.reload_groups()
 							self.thread_event.set()
 							self.recent_kills(display_count=300)
 
