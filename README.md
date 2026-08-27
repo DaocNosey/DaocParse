@@ -40,10 +40,11 @@ _Python version is recommended but an exe is available_ (https://github.com/Daoc
 | `%`          | Toggle showing AI Bots  |
 | `$`          | Show all tower/keep/relic captures  |
 | `^`          | Display session RP, BP, money  |
-| `+`          | Save the current position and size of the Daoc Parse window  |
-| `-`          | Reset window position  |
-| `*filename`  | Delete current log. Autosaves to `/saved_logs/{date}{filename}.log`  |
-| `>`          | Show all battlegroup leave/join messages and number of players in BG  |
+| `-`          | Save the current position and size of the Daoc Parse window  |
+| `+`          | Reset window position  |
+| `*filename`  | Delete current log. Autosaves to `/saved_logs/{date}{filename}.log` |
+| `>`          | Show all battlegroup leave/join messages and number of players in BG |
+| `&`          | Update list of rank 12+ players |
 | `<`          | Launch custom highlight group editor  |
 | `?`          | Command list and information  |
 ##
