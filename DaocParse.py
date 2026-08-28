@@ -353,9 +353,7 @@ class DaocParser():
 		for rvr in self.log_data:
 			if is_same_area(zone_name, rvr.zone):
 				zone_kill_list.append(rvr)
-				
-		# if display_count >= 300: clear()
-			
+
 		for x in zone_kill_list[-500:]:
 			self.print_kill(x)
 
