@@ -115,7 +115,7 @@ class DaocParser():
 		kill_info = rvr_event(*data)
 
 		if event_type == 'money' or event_dir == '$':
-			if 'due to your buff' in line: return
+			if 'due to your buff' in line or 'GroupFinder' in line: return
 			self.loot.add_loot(event_dir, event_type, data)
 			return
 
