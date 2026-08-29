@@ -1,5 +1,5 @@
 # Dark Age of Camelot Log Parser
-RVR kill feed with player class information and realm coloring<br/>
+RVR kill feed with player class information and realm coloring using in game /chatlog<br/>
 ![RVR Kills](https://i.imgur.com/0tKZ6Jy.png)
 
 ## Features
