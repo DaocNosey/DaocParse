@@ -56,7 +56,7 @@ AI Bot players are colored magenta
 ![RVR Kills (Bots)](https://i.imgur.com/dVozaMm.png)
 
 ### RVR Kill Feed (Bots Removed)
-Exclude AI Bot kills/deaths
+Exclude AI Bot kills/deaths (% to toggle)
 ![RVR Kills (No Bots)](https://i.imgur.com/TiU7eS6.png)
 
 ### Player Filtering
