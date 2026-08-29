@@ -62,7 +62,7 @@ Exclude AI Bot kills/deaths (% to toggle)
 
 ### Player Filtering
 Search for specific players
-![Filter Player](https://i.imgur.com/Rlj6xqw.png)
+![Filter Player](https://i.imgur.com/aq69wYH.png)
 
 ### Zone Filtering
 Search specific zones
