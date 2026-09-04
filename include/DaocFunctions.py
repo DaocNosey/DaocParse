@@ -952,7 +952,7 @@ def zone_realm(zone_name: str):
 
                 return colored(zone_name, fore=realm_colors[i + 1])
 
-    return 0
+    return zone_name
 
 def clear():
     _ = os.system('cls') 
