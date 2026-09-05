@@ -173,7 +173,7 @@ def get_daoc_folder() -> str:
 
 def create_ini(daoc_folder: str = '', eden_sid: str = '', user_agent: str = ''):
     """Create settings.ini file"""
-    user_agent = user_agent or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36'
+    user_agent = user_agent or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36'
     config.add_section('EDEN')
     config.set('EDEN', '# eden website login cookie (32 characters long)')
     config.set('EDEN', 'eden_daoc_sid', eden_sid)
